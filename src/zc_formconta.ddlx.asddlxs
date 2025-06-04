@@ -1,0 +1,87 @@
+@Metadata.layer: #CORE
+
+@UI: {
+  headerInfo: {
+    typeName: 'Formulario',
+    typeNamePlural: 'Formularios contables',
+    title: {
+      label: 'Tipo de Comprobante',
+      value: 'TipoComprobante',
+      type: #STANDARD
+    },
+    description: {
+      label: 'Formulario asociado',
+      value: 'Formulario'
+    }
+  }
+}
+annotate entity ZC_FORMCONTA with
+{
+
+  // Header Information
+  @UI.facet: [{
+    id: 'GeneralInfo',
+    purpose: #STANDARD,
+    type: #IDENTIFICATION_REFERENCE,
+    label: 'Información General',
+    position: 10
+  }]
+
+  // Button action
+
+  // Campos principales
+  @EndUserText.label: 'Tp.Comprobante'
+  @UI: {
+    lineItem:       [ { position: 10, importance: #HIGH, cssDefault.width: '6rem' } 
+//    ,{ type: #FOR_ACTION, dataAction: 'copyLineConta', label: 'Copiar' }
+    ],
+    identification: [ { position: 10 } ],
+    selectionField: [ { position: 10 } ]
+  }
+  TipoComprobante;
+
+  @EndUserText.label: 'Descripción Tp.Comprobante'
+  @UI: {
+    lineItem:       [ { position: 20, importance: #HIGH, cssDefault.width: '20rem' } ],
+    identification: [ { position: 20 } ]
+//    selectionField: [ { position: 20 } ]
+  }
+  TipoComprobanteText;
+
+  @EndUserText.label: 'Formulario Asociado'
+  @UI: {
+    lineItem:       [ { position: 30, importance: #HIGH, cssDefault.width: '20rem' } ],
+    identification: [ { position: 30 } ]
+  }
+  Formulario;
+
+  // Información de Auditoría
+  @EndUserText.label: 'Creado Por'
+  @UI: {
+    lineItem:       [ { position: 40, importance: #MEDIUM, cssDefault.width: '10rem' } ],
+    identification: [ { position: 40 } ]
+  }
+  Createdby;
+
+  @EndUserText.label: 'Fecha de Creación'
+  @UI: {
+    lineItem:       [ { position: 50, importance: #MEDIUM, cssDefault.width: '12rem' } ],
+    identification: [ { position: 50 } ]
+  }
+  Createdat;
+
+  @EndUserText.label: 'Modificado Por'
+  @UI: {
+    lineItem:       [ { position: 60, importance: #LOW, cssDefault.width: '12rem' } ],
+    identification: [ { position: 60 } ]
+  }
+  Lastchangedby;
+
+  @EndUserText.label: 'Fecha de Última Modificación'
+  @UI: {
+    lineItem:       [ { position: 70, importance: #LOW, cssDefault.width: '12rem' } ],
+    identification: [ { position: 70 } ]
+  }
+  Lastchangedat;
+
+}

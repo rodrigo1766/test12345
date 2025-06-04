@@ -1,0 +1,10 @@
+projection;
+strict ( 2 );
+
+define behavior for ZC_FORMCONTA alias Zformconta
+{
+  use create;
+  use update;
+  use delete;
+  use action copyLineConta;
+}

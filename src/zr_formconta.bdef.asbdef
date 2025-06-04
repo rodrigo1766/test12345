@@ -1,0 +1,28 @@
+managed implementation in class zbp_r_formconta unique;
+strict ( 2 );
+
+define behavior for ZR_FORMCONTA alias Zformconta
+persistent table zdt_formconta
+with additional save
+//late numbering
+lock master
+authorization master(global)
+etag master Lastchangedat
+{
+  field( mandatory :create, readonly :update) TipoComprobante;
+  // administrative fields: read only
+  field ( readonly ) Lastchangedat, Lastchangedby, Createdat, Createdby;
+
+  // mandatory fields that are required
+  field ( mandatory ) TipoComprobantetext, Formulario;
+
+  // mapping entity's field types with table field types
+  mapping for zfit_formconta corresponding;
+  create;
+  update;
+  delete;
+
+// validations
+  validation validateForms on save { create; field TipoComprobante, TipoComprobanteText, Formulario; }
+  factory action copyLineConta [1];
+}

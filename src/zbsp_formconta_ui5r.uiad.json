@@ -1,0 +1,33 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Configurar tipos de comprobantes contables",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD"
+  },
+  "ui5AppDetails": {
+    "appId": "project2"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_26EC7B7A8F30B3E0AACC8E6FD1F2A8C96C9DB704_TM",
+    "semanticObject": "TabMantZfitFormconta",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_26EC7B7A8F30B3E0AACC8E6FD1F2A8C96C9DB704_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Configurar tipos de comprobantes contables"
+      }
+    }
+  ]
+}
